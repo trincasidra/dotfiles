@@ -1,4 +1,5 @@
 # dotfiles
+![dotfiles](./screenshot.png)
 * Window manager: [i3](https://i3wm.org/)
 * Color theme: [dracula](https://draculatheme.com/)
 * Compositor: None
