@@ -2,12 +2,12 @@ themedir="$HOME/.config/rofi/themes"
 theme='powermenu'
 
 # Options
-shutdown=' Shutdown'
-reboot=' Reboot'
-lock=' Lock'
-logout=' Logout'
-yes=' Yes'
-no=' No'
+shutdown='󰐥 Shutdown'
+reboot=' Reboot'
+lock=' Lock'
+logout='󰍃 Logout'
+yes=' Yes'
+no=' No'
 
 # Rofi CMD
 rofi_cmd() {
@@ -55,6 +55,8 @@ run_cmd() {
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+            else
+                pkill -u $USER
 			fi
 		fi
 	else
@@ -73,7 +75,7 @@ case ${chosen} in
         ;;
     $lock)
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
+			betterlockscreen -l blur -- --time-str '%H:%M'
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock
 		fi

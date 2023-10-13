@@ -188,13 +188,13 @@ for_window [class="gnome-calculator"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="gnome-calendar"] floating enable
 for_window [class="Gnome-calendar"] floating enable
+for_window [class="battle.net.exe"] floating enable
+for_window [class="Arandr"] floating enable
 
 # Autostart
-exec_always --no-startup-id ~/.config/i3/scripts/fix_screen.sh
-exec_always --no-startup-id dunst -config ~/.config/dunstrc &>/dev/null
+exec_always --no-startup-id feh --bg-scale ~/wallpaper.png
 exec_always --no-startup-id nm-applet
-exec_always --no-startup-id pulseaudio -D
-exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
-# delay of 1s as it seems audio is not picked up otherwise, maybe it needs some time to load
-exec_always --no-startup-id sleep 1; bash ~/.config/polybar/scripts/start.sh
-exec_always --no-startup-id i3-msg 'worskpace 1; exec kitty; exec code; exec kitty ranger --hold; workspace 2; exec kitty spotify_player --hold; exec google-chrome; exec slack'
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec_always --no-startup-id i3-msg 'workspace 1; append_layout ~/.monitor.json'
+exec_always --no-startup-id i3-msg 'worskpace 1; exec spotify-launcher; exec firefox; exec discord'
+exec_always --no-startup-id bash ~/.config/polybar/scripts/start.sh

@@ -1,9 +1,9 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'apex_ls',
         'html',
         'lua_ls',
+        'haskell',
     }
 })
 
@@ -27,12 +27,6 @@ vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if not status then return end
-
-nvim_lsp.apex_ls.setup{
-    apex_jar_path = '/path/to/apex-jorje-lsp.jar',
-    apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
-    apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
-}
 
 nvim_lsp.html.setup{}
 

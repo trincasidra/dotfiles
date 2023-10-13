@@ -19,28 +19,12 @@
     # will be ignored.
     follow = mouse
 
-    ### Geometry ###
-    geometry = "400x200-6+48"
-
-    # dynamic width from 0 to 300
-    # width = (0, 300)
-    # constant width of 300
-    #width = (0, 400)
-
-    # The maximum height of a single notification, excluding the frame.
-    #height = 200
-
-    # Position the notification in the top right corner
+    width = 400
+    height = 200
     origin = top-right
-
-    # Offset from the origin
-    #offset = 10x50
-
-    # Scale factor. It is auto-detected if value is 0.
-    scale = 0
-
-    # Maximum number of notification (0 means no limit)
-    notification_limit = 0
+    offset = 3x30
+    scale = 1
+    notification_limit = 6
 
     ### Progress bar ###
 
@@ -111,7 +95,6 @@
     idle_threshold = 120
 
     ### Text ###
-
     font = Meslo 12
 
     # The spacing between lines.  If the height is smaller than the
@@ -169,7 +152,7 @@
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
-    ellipsize = middle
+    ellipsize = end
 
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
@@ -194,7 +177,7 @@
     min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = 96
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
