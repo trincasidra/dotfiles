@@ -3,4 +3,4 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-exec startx && sexkbmap es
+exec startx && setxkbmap es
