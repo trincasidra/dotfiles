@@ -20,4 +20,4 @@
   * Calendar: [calcurse](https://calcurse.org/) (with [calcurse-caldav](https://calcurse.org/files/calcurse-caldav.html) for gmail)
   * Mail: [cmdg](https://github.com/ThomasHabets/cmdg) (for gmail)
   * Audio visualizer: [cava](https://github.com/karlstav/cava)
-  * Screenshots: [fireshot](https://flameshot.org/)
+  * Screenshots: [flameshot](https://flameshot.org/)
