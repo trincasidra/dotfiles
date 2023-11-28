@@ -1,3 +1,8 @@
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias cursebreaker='python3 ~/CurseBreaker/CurseBreaker.py'
+alias sudo='doas'
+alias sudoedit='doas rnano'
 alias git='LANG=en_GB git'
 alias vi='nvim'
 alias vim='nvim'
