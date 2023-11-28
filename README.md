@@ -1,9 +1,9 @@
 # dotfiles
 ![dotfiles](./screenshot.png)
-* Window manager: [i3](https://i3wm.org/)
+* Window manager: [xmonad](https://xmonad.org/) or [i3](https://i3wm.org/)
 * Color theme: [dracula](https://draculatheme.com/)
 * Compositor: None
-* Status Bar: [polybar](https://github.com/polybar/polybar)
+* Status Bar: [xmobar](https://github.com/jaor/xmobar) or [polybar](https://github.com/polybar/polybar)
 * Notifications: [dunst](https://github.com/dunst-project/dunst)
 * Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
   * With [starship](https://starship.rs/)
