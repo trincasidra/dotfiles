@@ -195,6 +195,7 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
+    spawnOnce "bash ~/.screenlayout/external_monitor_only.sh &"
     spawnOnce "setxkbmap es &"
     spawnOnce "feh --bg-scale ~/wallpaper.png &"
     spawnOnce "nm-applet &"
