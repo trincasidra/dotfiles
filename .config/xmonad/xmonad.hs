@@ -195,6 +195,7 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
+    spawnOnce "setxkbmap es &"
     spawnOnce "feh --bg-scale ~/wallpaper.png &"
     spawnOnce "nm-applet &"
     spawnOnce "dunst -config ~/.config/dunst/dunstrc &"
