@@ -1,9 +1,17 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = {
+        'apex_ls',
+        'bashls',
+        'biome', --JSON and JS/TS
+        'cssls',
         'html',
+        'hls', --haskell
         'lua_ls',
-        'haskell',
+        'marksman', --markdown
+        'pylsp', --python
+        'sqlls',
+        'visualforce_ls'
     }
 })
 
@@ -28,8 +36,13 @@ vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if not status then return end
 
+nvim_lsp.apex_ls.setup{}
+nvim_lsp.bashls.setup{}
+nvim_lsp.biome.setup{}
+nvim_lsp.cssls.setup{}
 nvim_lsp.html.setup{}
-
+nvim_lsp.hls.setup{}
+nvim_lsp.java_language_server.setup{}
 nvim_lsp.lua_ls.setup {
     capabilities = capabilities,
     settings = {
@@ -48,3 +61,7 @@ nvim_lsp.lua_ls.setup {
         },
     },
 }
+nvim_lsp.marksman.setup{}
+nvim_lsp.pylsp.setup{}
+nvim_lsp.sqlls.setup{}
+nvim_lsp.visualforce_ls.setup{}
