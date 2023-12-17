@@ -10,6 +10,8 @@ alias emacs='nvim'
 alias subl='nvim'
 alias nano='nvim'
 alias hx='nvim'
+alias excel='sc-im'
+alias word='wordgrinder'
 
 sfck() {
   sf config set target-org="$1"
