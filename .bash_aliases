@@ -12,6 +12,10 @@ alias nano='nvim'
 alias hx='nvim'
 alias excel='sc-im'
 alias word='wordgrinder'
+alias jira='fjira --project=SF'
+alias jira-sf='fjira --project=SF'
+alias tickets='fjira --project=HI'
+alias jira-hi='fjira --project=HI'
 
 sfck() {
   sf config set target-org="$1"
