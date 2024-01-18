@@ -1,2 +1,0 @@
-#!bin/bash
-doas pacman -Syu alsa-utils arandr btop code code discord dunst feh firefox flameshot galculator git gnome-keyring go kitty lutris lxappearance mgba-qt neofetch neovim networkmanager noto-fonts npm opendoas paru pavucontrol pcmanfm pulseaudio pulseaudio-alsa python ranger rofi rust spotify-launcher stalonetray starship tree ttf-jetbrains-mono-nerd unrar unzip xclip xmobar xmonad xmonad-contrib xorg-server xorg-xinit xorg-xrandr zathura zathura-pdf-mupdf 

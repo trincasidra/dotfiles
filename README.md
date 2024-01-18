@@ -1,5 +1,7 @@
-# dotfiles
+# Trincasidra's dotfiles
+
 ![dotfiles](./screenshot.png)
+
 * Window manager: [xmonad](https://xmonad.org/) or [i3](https://i3wm.org/)
 * Color theme: [dracula](https://draculatheme.com/)
 * Compositor: None
@@ -15,10 +17,18 @@
   * Browser selector: [nbrowser](https://github.com/MyOS-ArchLinux/nbrowser) (as I use firefox myself but chrome for work stuff) (manual install)
 * Audio: PulseAudio + pavucontrol
 * Desktop background: [feh](https://feh.finalrewind.org/)
+* AUR manager: [paru](https://github.com/Morganamilo/paru)
 * Other stuff:
   * PDF viewer: [zathura](https://pwmt.org/projects/zathura/)
-  * Music: [spotify-player](https://github.com/aome510/spotify-player) (manual install)
+  * Music: [spotify-player](https://github.com/aome510/spotify-player) (manual install) or [spotube](https://github.com/KRTirtho/spotube)
   * Calendar: [calcurse](https://calcurse.org/) (with [calcurse-caldav](https://calcurse.org/files/calcurse-caldav.html) for gmail)
   * Mail: [cmdg](https://github.com/ThomasHabets/cmdg) (for gmail) (manual install)
   * Audio visualizer: [cava](https://github.com/karlstav/cava)
   * Screenshots: [flameshot](https://flameshot.org/)
+
+## Package installation
+
+Since these are my personal dotfiles, they also include some scripts to help me set up after freshly installing Arch. Therefore, if you're going to use them, I'd suggest checking all the scripts first since they install very specific packages:
+* **install_home.sh**: Base + gaming or personal preference stuff.
+* **install_work.sh**: Base + things I need to work or company-required.
+
