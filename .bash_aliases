@@ -16,6 +16,7 @@ alias jira='fjira --project=SF'
 alias jira-sf='fjira --project=SF'
 alias tickets='fjira --project=HI'
 alias jira-hi='fjira --project=HI'
+alias lspackages='comm -23 <(pacman -Qqett | sort) <(pacman -Qqg base-devel | sort | uniq)'
 
 sfck() {
   sf config set target-org="$1"
