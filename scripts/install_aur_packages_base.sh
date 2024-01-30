@@ -1,5 +1,6 @@
 #!bin/bash
 paru --skipreview --removemake --noconfirm -S cava
+paru --skipreview --removemake --noconfirm -S checkupdates-with-aur
 paru --skipreview --removemake --noconfirm -S clipit
 paru --skipreview --removemake --noconfirm -S dracula-cursors-git
 paru --skipreview --removemake --noconfirm -S dracula-gtk-theme

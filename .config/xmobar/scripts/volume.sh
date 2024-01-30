@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 volume="$(pamixer --get-volume-human)"
 level=${volume::-1}

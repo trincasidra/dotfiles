@@ -30,7 +30,7 @@ Config {
             -- charged status
             "-i", "\xf240 <fc=#50fa7b>Full</fc>"
         ] 50,
-        Run Com "bash" ["-c", ". ~/.config/xmobar/scripts/mycheckupdates"] "check-updates" 1800,
+        Run Com "bash" ["-c", ". ~/.config/xmobar/scripts/checkUpdates.sh"] "check-updates" 1800,
         Run DynNetwork ["-t", "\xf063 <rx>kb \xf062 <tx>kb"] 20,
         Run Cpu [
             "--template", "\xf2db <total>%",
@@ -40,7 +40,7 @@ Config {
             "--normal", "#ffb86c",
             "--high", "#ff5555"
         ] 50,
-        Run Com "bash" ["-c", ". ~/.config/xmobar/getVolume.sh"] "myVolume" 10,
+        Run Com "bash" ["-c", ". ~/.config/xmobar/scripts/getVolume.sh"] "myVolume" 10,
         Run XMonadLog
     ],
     sepChar = "%",
