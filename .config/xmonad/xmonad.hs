@@ -195,13 +195,10 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
-    spawnOnce "bash ~/.screenlayout/external_monitor_only.sh &"
-    spawnOnce "setxkbmap es &"
-    spawnOnce "feh --bg-scale ~/wallpaper.png &"
+    spawnOnce "bash ~/.screenlayout/external_monitor_only.sh && feh --bg-scale ~/wallpaper.png &"
     spawnOnce "nm-applet &"
     spawnOnce "dunst -config ~/.config/dunst/dunstrc &"
     spawnOnce "stalonetray &"
-    spawnOnce "fcitx5 &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

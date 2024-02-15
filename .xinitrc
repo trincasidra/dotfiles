@@ -10,6 +10,8 @@ if [ -f $sysresources ]; then
     xrdb -merge $sysresources
 fi
 
+setxkbmap es
+
 if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
@@ -30,6 +32,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-exec xsetroot -cursor_name left_ptr &
-exec setxkbmap es &
+xsetroot -cursor_name left_ptr
+
 exec xmonad

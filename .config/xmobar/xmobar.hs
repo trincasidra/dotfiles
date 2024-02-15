@@ -45,5 +45,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = " %XMonadLog% } %time% { <fc=#282a36><action=`kitty btop`>%cpu%</action> %sep% %dynnetwork% %sep% <action=`kitty doas pacman -Syu --noconfirm && kitty xmonad --recompile`>%updateicon% %check-updates%</action> %sep% <action=`amixer -q -D pulse sset Master toggle` button=1>%volumeicon% %myVolume%</action> %sep% <action=`kitty calcurse`>%date%</action></fc> "
+    template = " %XMonadLog% } %time% { <fc=#282a36><action=`kitty btop`>%cpu%</action> %sep% %dynnetwork% %sep% <action=`kitty paru && kitty xmonad --recompile`>%updateicon% %check-updates%</action> %sep% <action=`amixer -q -D pulse sset Master toggle` button=1>%volumeicon% %myVolume%</action> %sep% <action=`kitty calcurse`>%date%</action></fc> "
 }
