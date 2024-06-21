@@ -10,4 +10,3 @@ paru --skipreview --removemake --noconfirm -S nuclear-player-bin
 paru --skipreview --removemake --noconfirm -S refind-theme-dracula
 paru --skipreview --removemake --noconfirm -S sc-it
 paru --skipreview --removemake --noconfirm -S wordgrinder
-paru --skipreview --removemake --noconfirm -S zed
