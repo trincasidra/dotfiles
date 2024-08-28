@@ -37,13 +37,15 @@ Config {
             "--Low", "3",
             "--High", "50",
             "--low", "#282a36",
-            "--normal", "#ffb86c",
-            "--high", "#ff5555"
+            "--normal", "#282a36",
+            "--high", "#282a36"
         ] 50,
         Run Com "bash" ["-c", ". ~/.config/xmobar/scripts/getVolume.sh"] "myVolume" 10,
+        Run Com "bash" ["-c", ". ~/.config/xmobar/scripts/getCpuTemp.sh"] "myCpuTemp" 60,
+        Run Com "bash" ["-c", ". ~/.config/xmobar/scripts/getGpuTemp.sh"] "myGpuTemp" 60,
         Run XMonadLog
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = " %XMonadLog% } %time% { <fc=#282a36><action=`kitty btop`>%cpu%</action> %sep% %dynnetwork% %sep% <action=`kitty paru && kitty xmonad --recompile`>%updateicon% %check-updates%</action> %sep% <action=`amixer -q -D pulse sset Master toggle` button=1>%volumeicon% %myVolume%</action> %sep% <action=`kitty calcurse`>%date%</action></fc> "
+    template = " %XMonadLog% } %time% { <fc=#282a36>%myGpuTemp% %sep% %myCpuTemp% %sep% <action=`kitty btop`>%cpu%</action> %sep% %dynnetwork% %sep% <action=`kitty paru && kitty xmonad --recompile`>%updateicon% %check-updates%</action> %sep% <action=`amixer -q -D pulse sset Master toggle` button=1>%volumeicon% %myVolume%</action> %sep% <action=`kitty calcurse`>%date%</action></fc> "
 }
