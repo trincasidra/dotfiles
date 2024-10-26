@@ -21,6 +21,7 @@ local plugins = {
     'nvim-tree/nvim-web-devicons',
     'nvim-lualine/lualine.nvim',
     'nvim-treesitter/nvim-treesitter',
+    'ibhagwan/fzf-lua',
     'lewis6991/gitsigns.nvim',
     'stevearc/oil.nvim',
     'hrsh7th/nvim-cmp',
@@ -36,6 +37,13 @@ local plugins = {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.1',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
+    },
+    {
+        'xixiaofinland/sf.nvim',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+            'ibhagwan/fzf-lua',
+        }
     }
 }
 

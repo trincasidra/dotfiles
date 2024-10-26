@@ -12,11 +12,15 @@ require('nvim-treesitter.configs').setup {
         'markdown',
         'markdown_inline',
         'python',
+        'sflog',
+        'soql',
+        'sosl',
         'vim',
     },
     sync_install = false,
     auto_install = true,
     highlight = {
         enable = true,
+        additional_vim_regex_highlighting = false,
     },
 }
