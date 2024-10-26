@@ -7,6 +7,10 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 
+--Fixes hover flicker (such as Steam menus)
+import XMonad.Hooks.FloatConfigureReq
+import XMonad.Hooks.ManageHelpers
+
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.Spacing
@@ -176,7 +180,11 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = mempty
+myEventHook :: Event -> X All
+myEventHook = mconcat
+    [
+       fixSteamFlicker 
+    ]
 
 ------------------------------------------------------------------------
 -- Status bars and logging
