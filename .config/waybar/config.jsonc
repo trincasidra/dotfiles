@@ -11,41 +11,20 @@
     "margin-right": 10,
     // Choose the order of the modules
     "modules-left": [
-        "custom/launcher",
         "hyprland/workspaces",
-        // "cpu",
-        // "memory",
-        // "temperature",
-        // "disk",
         "custom/updates"
     ],
     "modules-center": [
-        "custom/music"
+        "clock"
     ],
     "modules-right": [
+        "tray",
+        "cpu",
+        "memory",
         "network",
         "pulseaudio",
-        "backlight",
-        "battery",
-        "custom/notifications",
-        "tray",
-        "clock",
-        // "custom/weather",
-        // "custom/cycle_wall",
-        // "custom/clipboard",
-        "custom/power"
-        // "custom/custom"
+        "custom/notifications"
     ],
-    "custom/launcher": {
-        "format": "{}",
-        "tooltip": true,
-        "exec": "echo '{\"text\":\"💧\",\"tooltip\":\"Drun | Run\"}'",
-        "return-type": "json",
-        "on-click": "pkill tofi || sleep 0.15 && tofi-drun -c ~/.config/tofi/tofi.launcher.conf",
-        "on-click-right": "pkill tofi || sleep 0.15 && tofi-run -c ~/.config/tofi/tofi.launcher.conf",
-        // "on-click": "pkill wofi || wofi --show drun -n",
-        // "on-click-right": "pkill wofi || wofi --show run -n",
-    },
     "hyprland/workspaces": {
         // "format": "{icon} {name}",
         "format": "",
@@ -58,15 +37,15 @@
         "on-click": "activate"
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": " {usage}%",
         "tooltip": true,
-        "on-click": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
+        "on-click": "kitty btop",
         "interval": 2
     },
     "memory": {
         "format": " {}%",
         "tooltip": true,
-        "on-click": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
+        "on-click": "kitty btop",
         "interval": 2
     },
     "temperature": {
@@ -81,52 +60,28 @@
             ""
         ],
         "tooltip": true,
-        "on-click": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
+        "on-click": "kitty btop",
         "interval": 2
     },
     "disk": {
         "format": " {percentage_used}% ({free})",
         "tooltip": true,
-        "on-click": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
+        "on-click": "kitty btop",
         "interval": 2
     },
     "custom/updates": {
         "format": "{}",
-        "exec": "~/.scripts/updates",
+        "exec": "~/.waybar/scripts/updates",
         "on-click": "~/.scripts/updates update",
         "interval": 600,
-        "tooltip": true,
-        // "tooltip-format": "{}",
-        // "exec-tooltip": "~/.scripts/updates tooltip"
-    },
-    "custom/music": {
-        "format": "{icon}{0}",
-        "format-icons": {
-            // "Playing": " ", // Uncomment if not using the dynamic script
-            "Paused": " ",
-            "Stopped": "&#x202d;ﭥ " // This stop symbol is RTL. So &#x202d; is left-to-right override.
-        },
-        "escape": true,
-        "tooltip": true,
-        "exec": "~/.scripts/caway -b 10 -e",
-        "return-type": "json",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl previous",
-        "on-scroll-down": "playerctl next",
-        "on-click-right": "amberol",
-        "max-length": 35
-    },
-    "hyprland/window": {
-        "format": "{}",
-        "separate-outputs": true,
-        "max-length": 35
+        "tooltip": true
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format": "↕{bandwidthTotalBytes}",
+        "format": "󰓢 {bandwidthTotalBytes}",
         "format-disconnected": "{icon} No Internet",
         "format-linked": " {ifname} (No IP)",
-        "format-alt": "↕{bandwidthUpBytes} | ↕{bandwidthDownBytes}",
+        "format-alt": " {bandwidthDownBytes} |  {bandwidthUpBytes}",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}  {gwaddr}",
         "tooltip-format-wifi": "{icon} {essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{icon} {ipaddr}/{cidr}",
@@ -229,70 +184,15 @@
         "spacing": 15
     },
     "clock": {
-        "timezone": "Asia/Calcutta",
-        "format": " {:%d <small>%a</small> %H:%M}",
-        //"format": " {:%a %b %d %Y | %H:%M}",
-        "format-alt": " {:%A %B %d %Y (%V) | %r}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "timezone": "Europe/Madrid",
+        "format": " {:%H:%M}",
+        "format-alt": " {:%a %d %b %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar-weeks-pos": "right",
         "today-format": "<span color='#f38ba8'><b><u>{}</u></b></span>",
         "format-calendar": "<span color='#f2cdcd'><b>{}</b></span>",
         "format-calendar-weeks": "<span color='#94e2d5'><b>W{:%U}</b></span>",
         "format-calendar-weekdays": "<span color='#f9e2af'><b>{}</b></span>",
         "interval": 60
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "custom/weather": {
-        "tooltip": true,
-        "format": "{}",
-        "exec": "~/.scripts/tools/expand weather",
-        "return-type": "json"
-    },
-    "custom/ss": {
-        "format": "{}",
-        "exec": "~/./scripts/tools/expand ss-icon",
-        "return-type": "json",
-        "on-click": "~/.scripts/screenshot_full"
-    },
-    "custom/cycle_wall": {
-        "format": "{}",
-        "exec": "~/.scripts/tools/expand wall",
-        "return-type": "json",
-        // "interval": 1,
-        "on-click": "~/.scripts/tools/expand cycle",
-        "on-click-right": "~/.scripts/tools/expand cycler"
-    },
-    "custom/clipboard": {
-        "format": "{}",
-        "exec": "~/.scripts/tools/expand clipboard",
-        "return-type": "json",
-        // Window position is managed in Hyperland config's windowrulev2
-        "on-click": "pkill tofi || sleep 0.15 && cliphist list | tofi -c ~/.config/tofi/tofi.clip.conf | cliphist decode | wl-copy",
-        "on-click-middle": "rm -f ~/.cache/cliphist/db",
-        "on-click-right": "pkill tofi || sleep 0.15 && cliphist list | tofi -c ~/.config/tofi/tofi.clip.conf | cliphist delete",
-        // Here "-l top_right -x -15 -y 10" doesn't matter as '-n' mode is used
-        // "on-click": "pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist decode | wl-copy",
-        // "on-click-middle": "rm -f ~/.cache/cliphist/db",
-        // "on-click-right": "pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist delete",
-        "escape": true
-    },
-    "custom/power": {
-        "format": "{}",
-        // "exec": "~/.scripts/tools/expand power",
-        "exec": "echo '{\"text\":\"⏻\",\"tooltip\":\"Power\"}'",
-        "return-type": "json",
-        "on-click": "~/.config/wlogout/launch.sh"
-    },
-    "custom/custom": {
-        "format": "{}",
-        "exec": "~/.scripts/tools/expand arrow-icon",
-        "on-click": "~/.scripts/tools/expand_toolbar",
-        "return-type": "json"
     }
 }

@@ -6,9 +6,10 @@ window {
     font-family: "FiraCode Nerd Font Mono";
     font-size: 13px;
     margin: 0px;
-    border: 2px solid #cba6f7;
-    background-color: #161925;
-    border-radius: 16px;
+    background-color: #282a36;
+    border-image: linear-gradient(-45deg, #50fa7b 0%, #bd93f9 100%) 1;
+    border-width: 3px;
+    border-style: solid;
 }
 
 #input {
@@ -19,7 +20,7 @@ window {
 #inner-box {
     margin: 0px;
     border: none;
-    color: #cba6f7;
+    color: #bd93f9;
 }
 
 #inner-box * {
@@ -34,7 +35,7 @@ window {
 }
 
 #text:selected {
-    color: #fff;
+    color: #282a36;
     font-weight: bold;
 }
 
@@ -57,7 +58,7 @@ window {
 #entry:selected {
     outline: none;
     margin: 0px;
+    border-radius: 8px;
     border: none;
-    border-radius: 16px;
-    background: linear-gradient(90deg, #cba6f7 0%, #94e2d5 100%);
+    background: linear-gradient(45deg, #50fa7b 0%, #8be9fd 100%);
 }
