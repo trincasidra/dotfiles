@@ -1,29 +1,26 @@
-/*
- * vim: ft=less
- */
-
-@define-color noti-bg rgb(22, 25, 37);
-@define-color cc-bg alpha(@noti-bg, 0.9);
-
-@define-color noti-border-color @noti-bg;
-@define-color noti-bg-hover rgb(39,44,66);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-
-@define-color bg-selected rgb(137,180,250);
-
+@define-color bg #282a36;
+@define-color bg-hover #44475a;
+@define-color button-border #6272a4;
+@define-color fg #f8f8f2;
+@define-color red #ff5555;
+@define-color green #50fa7b;
+@define-color purple #bd93f9;
+@define-color cyan #8be9fd;
+@define-color pink #ff79c6;
 
 /* Window behind control center and on all other monitors */
 .blank-window {
-  background: alpha(black, 0);
-
+  background: transparent;
 }
 
 /* Main panel */
 .control-center {
-  background: @cc-bg;
+  background: @bg;
   border-radius: 16px;
-  border: 2px solid #cba6f7;
+  border-color: @green;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 16px;
 }
 
 .control-center-list {
@@ -54,20 +51,21 @@
   outline: none;
   padding: 0;
   margin: 0;
+  border-radius: 16px;
+  border: 2px solid @purple;
+  background: @bg;
 }
 
 /* specific urgency colors */
 .critical .summary {
-  color: #f38ba8;
+  color: @red;
 }
 
 .notification-content {
   outline: none;
-  margin: 10px;
-  padding:8px;
-  border-radius: 16px;
-  border: 2px solid #cba6f7;
-  background: @cc-bg;
+  margin: 0px;
+  padding: 8px;
+  background: @bg;
 }
 
 .control-center .notification-content {
@@ -76,7 +74,7 @@
 }
 
 .close-button {
-  background: @noti-close-bg;
+  background: @bg;
   color: white;
   text-shadow: none;
   padding: 0;
@@ -91,7 +89,7 @@
 
 .close-button:hover {
   box-shadow: none;
-  background: @noti-close-bg-hover;
+  background: @bg-hover;
   transition: all 0.15s ease-in-out;
   border: none;
 }
@@ -106,7 +104,7 @@
   padding: 0;
   margin: 0;
   box-shadow: none;
-  color: white;
+  color: @fg;
   outline: none;
   background: transparent;
   border: none;
@@ -122,7 +120,7 @@
 }
 
 .body-image {
-  background-color: white;
+  background-color: @fg;
   border-radius: 100%;
 }
 
@@ -130,14 +128,14 @@
   font-size: 16px;
   font-weight: bold;
   background: transparent;
-  color: white;
+  color: @fg;
   text-shadow: none;
 }
 
 .time {
   font-size: 13px;
   background: transparent;
-  color: white;
+  color: @fg;
   text-shadow: none;
   margin-right: 5px;
 
@@ -147,13 +145,13 @@
   font-size: 13px;
   font-weight: normal;
   background: transparent;
-  color: white;
+  color: @fg;
   text-shadow: none;
 }
 
 /* The "Notifications" and "Do Not Disturb" text widget */
 .top-action-title {
-  color: white;
+  color: @fg;
   text-shadow: none;
 }
 
@@ -165,17 +163,19 @@
   margin: 8px;
   font-size: 1.5rem;
 }
-.widget-title > button {
+
+.widget-title>button {
   font-size: initial;
-  color: white;
+  color: @fg;
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: @bg;
+  border: 1px solid @button-border;
   box-shadow: none;
-  border-radius: 12px;
+  border-radius: 8px;
 }
-.widget-title > button:hover {
-  background: @noti-bg-hover;
+
+.widget-title>button:hover {
+  background: @bg-hover;
 }
 
 /* DND widget */
@@ -183,18 +183,21 @@
   margin: 8px;
   font-size: 1rem;
 }
-.widget-dnd > switch {
+
+.widget-dnd>switch {
   font-size: initial;
   border-radius: 12px;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: @red;
+  border: 1px solid @button-border;
   box-shadow: none;
 }
-.widget-dnd > switch:checked {
-  background: @bg-selected;
+
+.widget-dnd>switch:checked {
+  background: @green;
 }
-.widget-dnd > switch slider {
-  background: @noti-bg-hover;
+
+.widget-dnd>switch slider {
+  background: @fg;
   border-radius: 12px;
 }
 
@@ -202,7 +205,8 @@
 .widget-label {
   margin: 8px;
 }
-.widget-label > label {
+
+.widget-label>label {
   font-size: 1.1rem;
 }
 
@@ -210,14 +214,17 @@
 .widget-mpris {
   /* The parent to all players */
 }
+
 .widget-mpris-player {
   padding: 8px;
   margin: 8px;
 }
+
 .widget-mpris-title {
   font-weight: bold;
   font-size: 1rem;
 }
+
 .widget-mpris-subtitle {
- font-size: 0.85rem;
+  font-size: 0.85rem;
 }
