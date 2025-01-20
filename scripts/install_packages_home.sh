@@ -1,2 +1,2 @@
 #!bin/bash
-doas -n pacman -Syu --noconfirm discord lutris mgba-qt
+doas -n pacman -Syu --noconfirm discord steam lutris mgba-qt
