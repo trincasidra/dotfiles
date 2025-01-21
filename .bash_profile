@@ -3,4 +3,4 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-exec startx
+exec ~/.config/hypr/start.sh
