@@ -20,7 +20,7 @@ esac
 
 # If the parameter is "update", update all services
 if [ "$1" = "update" ]; then
-    kitty --start-as=fullscreen --title all_is_kitty --hold --detach sh -c 'paru -Syu'
+    kitty --hold --detach sh -c 'paru -Syu'
 fi
 
 # If there aren't any parameters, return the total number of updates
@@ -30,12 +30,7 @@ if [ "$1" = "" ]; then
     # If there are updates, the script will output the following:   Updates
     # If there are no updates, the script will output nothing.
 
-    if [[ "$COUNT" = "0" ]]
-    then
-        echo ""
-    else
-        # This Update symbol is RTL. So &#x202d; is left-to-right override.
-        echo " $COUNT"
-    fi
+    # This Update symbol is RTL. So &#x202d; is left-to-right override.
+    echo " $COUNT"
     exit 0
 fi

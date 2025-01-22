@@ -71,8 +71,8 @@
     },
     "custom/updates": {
         "format": "{}",
-        "exec": "~/.waybar/scripts/updates",
-        "on-click": "~/.scripts/updates update",
+        "exec": "~/.waybar/scripts/updates.sh",
+        "on-click": "~/.scripts/updates.sh update",
         "interval": 600,
         "tooltip": true
     },
