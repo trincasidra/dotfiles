@@ -11,14 +11,14 @@
     "margin-right": 10,
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "custom/updates"
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
         "tray",
+        "custom/updates",
         "cpu",
         "memory",
         "network",
@@ -71,10 +71,9 @@
     },
     "custom/updates": {
         "format": "{}",
-        "exec": "~/.waybar/scripts/updates.sh",
-        "on-click": "~/.scripts/updates.sh update",
-        "interval": 600,
-        "tooltip": true
+        "exec": "~/.config/waybar/scripts/updates.sh",
+        "on-click": "kitty paru -Syu;",
+        "restart": 600
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -86,7 +85,7 @@
         "tooltip-format-wifi": "{icon} {essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{icon} {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "{icon} Disconnected",
-        "on-click-right": "nm-connection-editor",
+        "on-click-right": "kitty nmtui",
         "format-icons": {
             "ethernet": "",
             "disconnected": "⚠",
