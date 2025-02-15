@@ -1,2 +1,2 @@
 #!bin/bash
-paru --skipreview --removemake --noconfirm -S librewolf-bin
+echo 'No home packages to install :)'
