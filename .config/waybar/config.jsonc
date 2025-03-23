@@ -22,8 +22,8 @@
         "cpu",
         "memory",
         "network",
-        "pulseaudio",
-        "custom/notifications"
+        "pulseaudio"//,
+//        "custom/notifications"
     ],
     "hyprland/workspaces": {
         // "format": "{icon} {name}",
@@ -73,7 +73,7 @@
         "format": "{}",
         "exec": "~/.config/waybar/scripts/updates.sh",
         "on-click": "kitty paru -Syu;",
-        "restart": 600
+        "restart-interval": 300
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
