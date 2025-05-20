@@ -3,7 +3,8 @@ doas sh scripts/enable_multilib.sh
 echo "GPU brand?"
 echo "  1) AMD Radeon"
 echo "  2) Nvidia"
-echo "  3) Intel" <br/>
+echo "  3) Intel"
+echo ""
 read n
 case $n in
   1) sh scripts/install_radeon.sh;;
