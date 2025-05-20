@@ -1,2 +1,2 @@
 #!bin/bash
-echo 'No home packages to install :)'
+paru --skipreview --removemake --noconfirm -S zen-browser-bin
