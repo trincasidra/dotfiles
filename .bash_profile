@@ -3,4 +3,4 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-exec ~/.config/hypr/start.sh
+exec Hyprland
