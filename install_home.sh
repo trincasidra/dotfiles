@@ -1,5 +1,5 @@
 #!bin/bash
-doas sh scripts/enable_multilib.sh
+sh scripts/enable_multilib.sh
 sh scripts/install_packages_base.sh
 sh scripts/install_packages_home.sh
 sh scripts/install_paru.sh
